@@ -20,6 +20,10 @@ With this `script` tag, you can use theme to use 4 test colors in a palette.
 <script src="https://lightwindcss.github.io/Palette/cdn/palette/palette.js" type="module"></script>
 ```
 
+## Wiki
+
+In case you haven't understood something check out the [wiki](https://github.com/LightWindCss/Palette/wiki).
+
 ## Sources
 
 **[Palette colors](https://colorhunt.co/)** - All the palettes are based on this website
