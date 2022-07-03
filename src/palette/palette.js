@@ -1,6 +1,4 @@
-import globalJson from './paletteConfig.json' assert {type: 'json'} // getting the palette colors 
-
-let lightWindTheme = globalJson;
+import lightWindTheme from './paletteConfig.json' assert {type: 'json'} // getting the palette colors 
 
 window.addEventListener('load', () => {
     // run the Palette observation on window load
