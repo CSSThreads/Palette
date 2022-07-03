@@ -14,8 +14,6 @@ try {
     }
 } catch {}
 
-console.log(lightWindTheme)
-
 window.addEventListener('load', () => {
     // run the Palette observation on window load
     getAllAttributes();
@@ -73,8 +71,6 @@ function getAllAttributes() {
             element.style.setProperty('--color2', lightWindTheme[theme].color2)
             element.style.setProperty('--color3', lightWindTheme[theme].color3)
             element.style.setProperty('--color4', lightWindTheme[theme].color4)
-            
-            console.log(allElements[i])
         } catch {}
     }
 }
