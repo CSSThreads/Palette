@@ -2,11 +2,11 @@ import globalJson from 'https://lightwindcss.github.io/Palette/cdn/palette/palet
 
 let lightWindTheme = null;
 
-if (document.querySelector('script[src="https://lightwindcss.github.io/Palette/src/palette/palette.js"]').getAttribute('themesrc') == null) {
+if (document.querySelector('script[src="https://lightwindcss.github.io/Palette/cdn/palette/palette.js"]').getAttribute('themesrc') == null) {
     lightWindTheme = globalJson
 }
 else {
-    lightWindTheme = await fetch(document.querySelector('script[src="https://lightwindcss.github.io/Palette/src/palette/palette.js"]').getAttribute('themesrc'))
+    lightWindTheme = await fetch(document.querySelector('script[src="https://lightwindcss.github.io/Palette/cdn/palette/palette.js"]').getAttribute('themesrc'))
     .then(response => {
         return response.json();
     })
