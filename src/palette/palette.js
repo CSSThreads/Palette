@@ -1,17 +1,18 @@
-import lightWindTheme from 'https://lightwindcss.github.io/Palette/src/palette/paletteConfig.json' assert {type: 'json'}
+import lightWindTheme from './paletteConfig.json' assert {type: 'json'} // getting the palette colors
 
 window.addEventListener('load', () => {
+    // run the Palette observation on window load
     getAllAttributes();
     lightObserve();
 })
 
-// classes observation functions
+// attributes observation function
 function lightObserve() {
     new MutationObserver((mutations) => {
         for (let i in mutations) {
             if (mutations[i].type == 'childList') {
                 try {
-                    // adding the theme
+                    // adding the theme to new appended child
                     let theme = mutations[i].target.attributes.theme.nodeValue, element = mutations[i].target
     
                     element.style.setProperty('--color1', lightWindTheme[theme].color1)
@@ -21,9 +22,10 @@ function lightObserve() {
                 } catch {}
             }
             else {
+                // in case the theme change we execute this part of code
                 if (mutations[i].attributeName == 'theme') {
                     try {
-                        // adding the theme
+                        // adding the theme colors
                         let theme = mutations[i].target.attributes.theme.nodeValue, element = mutations[i].target
         
                         element.style.setProperty('--color1', lightWindTheme[theme].color1)
@@ -31,7 +33,7 @@ function lightObserve() {
                         element.style.setProperty('--color3', lightWindTheme[theme].color3)
                         element.style.setProperty('--color4', lightWindTheme[theme].color4)
                     } catch {
-                        // deleting the theme
+                        // deleting the theme colors
                         let element = mutations[i].target
 
                         element.style.removeProperty('--color1')
@@ -44,6 +46,8 @@ function lightObserve() {
         }
     }).observe(document.querySelector('body'), { attributes: true, subtree: true, childList: true });
 }
+
+// getting all the elements with the theme attribute to add the colors
 function getAllAttributes() {
     let allElements = document.querySelectorAll('*');
     for (let i in allElements) {
