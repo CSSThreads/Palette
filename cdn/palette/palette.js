@@ -14,6 +14,8 @@ try {
     }
 } catch {}
 
+console.log(lightWindTheme)
+
 window.addEventListener('load', () => {
     // run the Palette observation on window load
     getAllAttributes();
