@@ -1,4 +1,6 @@
-import lightWindTheme from './paletteConfig.json' assert {type: 'json'} // getting the palette colors
+import globalJson from './paletteConfig.json' assert {type: 'json'} // getting the palette colors 
+
+let lightWindTheme = globalJson;
 
 window.addEventListener('load', () => {
     // run the Palette observation on window load
@@ -11,15 +13,16 @@ function lightObserve() {
     new MutationObserver((mutations) => {
         for (let i in mutations) {
             if (mutations[i].type == 'childList') {
-                try {
-                    // adding the theme to new appended child
-                    let theme = mutations[i].target.attributes.theme.nodeValue, element = mutations[i].target
-    
-                    element.style.setProperty('--color1', lightWindTheme[theme].color1)
-                    element.style.setProperty('--color2', lightWindTheme[theme].color2)
-                    element.style.setProperty('--color3', lightWindTheme[theme].color3)
-                    element.style.setProperty('--color4', lightWindTheme[theme].color4)
-                } catch {}
+                // adding the theme to new appended child    
+                mutations[i].addedNodes.forEach(el => {
+                    try {
+                        let theme = el.attributes.theme.nodeValue
+                        el.style.setProperty('--color1', lightWindTheme[theme].color1)
+                        el.style.setProperty('--color2', lightWindTheme[theme].color2)
+                        el.style.setProperty('--color3', lightWindTheme[theme].color3)
+                        el.style.setProperty('--color4', lightWindTheme[theme].color4)
+                    } catch {}
+                })
             }
             else {
                 // in case the theme change we execute this part of code
@@ -57,6 +60,8 @@ function getAllAttributes() {
             element.style.setProperty('--color2', lightWindTheme[theme].color2)
             element.style.setProperty('--color3', lightWindTheme[theme].color3)
             element.style.setProperty('--color4', lightWindTheme[theme].color4)
+            
+            console.log(allElements[i])
         } catch {}
     }
 }
