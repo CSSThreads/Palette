@@ -1,65 +1,44 @@
-import lightWindTheme from './paletteConfig.json' assert {type: 'json'} // getting the palette colors 
+{
+    // mutations
+    (async () => {
+        var styleHttpReq = new XMLHttpRequest();
+        styleHttpReq.open("GET", document.querySelector('[themesrc]').getAttribute('themesrc'), false);
+        styleHttpReq.send(null);
+        let res = JSON.parse(styleHttpReq.responseText)
 
-window.addEventListener('load', () => {
-    // run the Palette observation on window load
-    getAllAttributes();
-    lightObserve();
-})
+        new MutationObserver(function(mutations) {
+            mutations.forEach(mutation => {
+                try {
+                    mutation.addedNodes.forEach(node => {
+                        let theme = node.attributes.theme.nodeValue
+                        for (var i = 0; i < res[theme].length; i++) {
+                            node.style.setProperty(`--color${1+i}`, res[theme][i])
+                        }
+                    })
+                } catch {}
+            })
+        }).observe(document, { subtree: true, childList: true });
 
-// attributes observation function
-function lightObserve() {
-    new MutationObserver((mutations) => {
-        for (let i in mutations) {
-            if (mutations[i].type == 'childList') {
-                // adding the theme to new appended child    
-                mutations[i].addedNodes.forEach(el => {
-                    try {
-                        let theme = el.attributes.theme.nodeValue
-                        el.style.setProperty('--color1', lightWindTheme[theme].color1)
-                        el.style.setProperty('--color2', lightWindTheme[theme].color2)
-                        el.style.setProperty('--color3', lightWindTheme[theme].color3)
-                        el.style.setProperty('--color4', lightWindTheme[theme].color4)
-                    } catch {}
-                })
-            }
-            else {
-                // in case the theme change we execute this part of code
-                if (mutations[i].attributeName == 'theme') {
+        new MutationObserver(function(mutations) {
+            try {
+                mutations.forEach(mutation => {
+                    let element = mutation.target, j = 1
+
+                    while (j) {
+                        if (!element.style.hasOwnProperty(`--color${j}`))
+                            break;
+                        element.style.removeProperty(`--color${j}`)
+                    } 
                     try {
                         // adding the theme colors
-                        let theme = mutations[i].target.attributes.theme.nodeValue, element = mutations[i].target
-        
-                        element.style.setProperty('--color1', lightWindTheme[theme].color1)
-                        element.style.setProperty('--color2', lightWindTheme[theme].color2)
-                        element.style.setProperty('--color3', lightWindTheme[theme].color3)
-                        element.style.setProperty('--color4', lightWindTheme[theme].color4)
-                    } catch {
-                        // deleting the theme colors
-                        let element = mutations[i].target
+                        let theme = mutation.target.attributes.theme.nodeValue
 
-                        element.style.removeProperty('--color1')
-                        element.style.removeProperty('--color2')
-                        element.style.removeProperty('--color3')
-                        element.style.removeProperty('--color4')
-                    }
-                }
-            }
-        }
-    }).observe(document.querySelector('body'), { attributes: true, subtree: true, childList: true });
-}
-
-// getting all the elements with the theme attribute to add the colors
-function getAllAttributes() {
-    let allElements = document.querySelectorAll('*');
-    for (let i in allElements) {
-        try {
-            let theme = allElements[i].attributes.theme.nodeValue, element = allElements[i].attributes.theme.ownerElement
-            element.style.setProperty('--color1', lightWindTheme[theme].color1)
-            element.style.setProperty('--color2', lightWindTheme[theme].color2)
-            element.style.setProperty('--color3', lightWindTheme[theme].color3)
-            element.style.setProperty('--color4', lightWindTheme[theme].color4)
-            
-            console.log(allElements[i])
-        } catch {}
-    }
+                        for (var i = 0; i < res[theme].length; i++) {
+                            element.style.setProperty(`--color${1+i}`, res[theme][i])
+                        }
+                    } catch {}
+                })
+            } catch {}
+        }).observe(document, { attributes: true, attributeFilter: ["theme"], subtree: true });
+    })()
 }
