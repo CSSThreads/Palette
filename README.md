@@ -17,7 +17,7 @@ With this `script` tag, you can use theme to use 4 test colors in a palette.
 
 ```html
 <!-- Script lightwindcss theme -->
-<script src="https://lightwindcss.github.io/Palette/cdn/palette/palette.js" type="module"></script>
+<script src="https://lightwindcss.github.io/Palette/cdn/palette/palette.js"></script>
 ```
 
 ## Wiki
