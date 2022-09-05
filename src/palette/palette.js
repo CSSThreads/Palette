@@ -28,6 +28,7 @@
                         if (!element.style.hasOwnProperty(`--color${j}`))
                             break;
                         element.style.removeProperty(`--color${j}`)
+                        j++;
                     } 
                     try {
                         // adding the theme colors
