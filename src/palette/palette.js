@@ -22,14 +22,15 @@
         new MutationObserver(function(mutations) {
             try {
                 mutations.forEach(mutation => {
-                    let element = mutation.target, j = 1
+                    let element = mutation.target
 
-                    while (j) {
-                        if (!element.style.hasOwnProperty(`--color${j}`))
-                            break;
-                        element.style.removeProperty(`--color${j}`)
-                        j++;
-                    } 
+                    for (var i = 0; i < element.style.length; i++) {
+                        if (element.style[i].startsWith('--color')) {
+                            element.style.removeProperty(element.style[i])
+                            i--;
+                        }
+                    }
+
                     try {
                         // adding the theme colors
                         let theme = mutation.target.attributes.theme.nodeValue
