@@ -11,6 +11,8 @@ With this `link` tag, you can use 220 colors used by default by TailWindCss.
 <link rel="stylesheet" href="https://lightwindcss.github.io/Palette/src/colors.css">
 ```
 
+***[✅ Test it](https://lightwindcss.github.io/Palette/test/colors.html)***
+
 ## LightWindCSS palette
 
 With this `script` tag, you can use data-theme attributes to use test colors from a palette.
@@ -19,6 +21,8 @@ With this `script` tag, you can use data-theme attributes to use test colors fro
 <!-- Script lightwindcss theme -->
 <script src="https://lightwindcss.github.io/Palette/src/palette/palette.js" data-themesrc="https://gitcdn.xyz/cdn/LightWindCss/Palette/main/src/palette/paletteConfig.json"></script>
 ```
+
+***[✅ Test it](https://lightwindcss.github.io/Palette/test/palette.html)***
 
 ## Wiki
 
