@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightWindCSS palette test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            padding: 30px;
+        }
+        body > h2 {
+            padding-top: 30px;
+        }
+        body > div:last-child {
+            padding-bottom: 50px;
+        }
+        body > div > div {
+            display: flex;
+            flex-direction: column;
+        }
+        *:not(body) > p {
+            margin-block-end: 0px;
+            margin-block-start: 0px;
+            align-self: center;
+        }
+        button {
+            margin-top: 10px;
+        }
+        input {
+            margin-left: 10px;
+        }
+    </style>
+
+    <script src="https://lightwindcss.github.io/Palette/src/palette/palette.js" data-themesrc="https://gitcdn.xyz/cdn/LightWindCss/Palette/main/src/palette/paletteConfig.json"></script>
+
+    <script>
+        function toggleTheme(e) {
+            if (e.hasAttribute('data-theme'))
+                e.removeAttribute('data-theme')
+            else
+                e.setAttribute('data-theme', e.id)
+        }
+        function reset(e) {
+            e.setAttribute('data-theme', e.id)
+        }
+
+        function inputCheck(e) {
+            if (e.querySelector('input').value != '') 
+                e.removeAttribute('disabled')
+            else
+                e.setAttribute('disabled', '')
+        }
+
+        function setTheme(e) {
+            if (window.event.path.length == 7) 
+                e.setAttribute('data-theme', e.querySelector('input').value)
+        }
+    </script>
+</head>
+<body>
+    <h1>LightWindCSS palette test</h1>
+
+    <p>Test our palette test color system.</p>
+
+    <h2 style="text-align: center;">Pastel</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="pastel0" data-theme="pastel0">
+            <h3>Pastel 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel1" data-theme="pastel1">
+            <h3>Pastel 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel2" data-theme="pastel2">
+            <h3>Pastel 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel3" data-theme="pastel3">
+            <h3>Pastel 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel4" data-theme="pastel4">
+            <h3>Pastel 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel5" data-theme="pastel5">
+            <h3>Pastel 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel6" data-theme="pastel6">
+            <h3>Pastel 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel7" data-theme="pastel7">
+            <h3>Pastel 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel8" data-theme="pastel8">
+            <h3>Pastel 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="pastel9" data-theme="pastel9">
+            <h3>Pastel 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Neon</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="neon0" data-theme="neon0">
+            <h3>Neon 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon1" data-theme="neon1">
+            <h3>Neon 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon2" data-theme="neon2">
+            <h3>Neon 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon3" data-theme="neon3">
+            <h3>Neon 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon4" data-theme="neon4">
+            <h3>Neon 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon5" data-theme="neon5">
+            <h3>Neon 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon6" data-theme="neon6">
+            <h3>Neon 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon7" data-theme="neon7">
+            <h3>Neon 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon8" data-theme="neon8">
+            <h3>Neon 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="neon9" data-theme="neon9">
+            <h3>Neon 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Vintage</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="vintage0" data-theme="vintage0">
+            <h3>Vintage 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage1" data-theme="vintage1">
+            <h3>Vintage 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage2" data-theme="vintage2">
+            <h3>Vintage 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage3" data-theme="vintage3">
+            <h3>Vintage 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage4" data-theme="vintage4">
+            <h3>Vintage 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage5" data-theme="vintage5">
+            <h3>Vintage 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage6" data-theme="vintage6">
+            <h3>Vintage 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage7" data-theme="vintage7">
+            <h3>Vintage 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage8" data-theme="vintage8">
+            <h3>Vintage 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="vintage9" data-theme="vintage9">
+            <h3>Vintage 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Retro</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="retro0" data-theme="retro0">
+            <h3>Retro 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro1" data-theme="retro1">
+            <h3>Retro 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro2" data-theme="retro2">
+            <h3>Retro 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro3" data-theme="retro3">
+            <h3>Retro 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro4" data-theme="retro4">
+            <h3>Retro 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro5" data-theme="retro5">
+            <h3>Retro 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro6" data-theme="retro6">
+            <h3>Retro 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro7" data-theme="retro7">
+            <h3>Retro 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro8" data-theme="retro8">
+            <h3>Retro 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="retro9" data-theme="retro9">
+            <h3>Retro 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Light</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="light0" data-theme="light0">
+            <h3>Light 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light1" data-theme="light1">
+            <h3>Light 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light2" data-theme="light2">
+            <h3>Light 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light3" data-theme="light3">
+            <h3>Light 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light4" data-theme="light4">
+            <h3>Light 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light5" data-theme="light5">
+            <h3>Light 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light6" data-theme="light6">
+            <h3>Light 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light7" data-theme="light7">
+            <h3>Light 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light8" data-theme="light8">
+            <h3>Light 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="light9" data-theme="light9">
+            <h3>Light 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+
+    <h2 style="text-align: center;">Dark</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div id="dark0" data-theme="dark0">
+            <h3>Dark 0</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark1" data-theme="dark1">
+            <h3>Dark 1</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark2" data-theme="dark2">
+            <h3>Dark 2</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark3" data-theme="dark3">
+            <h3>Dark 3</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark4" data-theme="dark4">
+            <h3>Dark 4</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark5" data-theme="dark5">
+            <h3>Dark 5</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark6" data-theme="dark6">
+            <h3>Dark 6</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark7" data-theme="dark7">
+            <h3>Dark 7</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark8" data-theme="dark8">
+            <h3>Dark 8</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+        <div id="dark9" data-theme="dark9">
+            <h3>Dark 9</h3>
+    
+            <p style="color: var(--color1);">Color 1</p>
+            <p style="color: var(--color2);">Color 2</p>
+            <p style="color: var(--color3);">Color 3</p>
+            <p style="color: var(--color4);">Color 4</p>
+
+            <button onclick="toggleTheme(this.parentElement)">Toggle theme</button>
+            <button onclick="setTheme(this.parentElement)" disabled>Set this theme <input oninput="inputCheck(this.parentElement)" type="text"></button>
+            <button onclick="reset(this.parentElement)">RESET</button>
+        </div>
+    </div>
+</body>
+</html>
