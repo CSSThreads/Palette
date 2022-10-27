@@ -13,11 +13,11 @@ With this `link` tag, you can use 220 colors used by default by TailWindCss.
 
 ## LightWindCSS palette
 
-With this `script` tag, you can use theme to use 4 test colors in a palette.
+With this `script` tag, you can use data-theme attributes to use test colors from a palette.
 
 ```html
 <!-- Script lightwindcss theme -->
-<script src="https://lightwindcss.github.io/Palette/src/palette/palette.js"></script>
+<script src="https://lightwindcss.github.io/Palette/src/palette/palette.js" data-themesrc="https://gitcdn.xyz/cdn/LightWindCss/Palette/main/src/palette/paletteConfig.json"></script>
 ```
 
 ## Wiki
